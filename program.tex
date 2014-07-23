@@ -1,0 +1,236 @@
+\documentclass[12pt,a4paper,landscape]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{xcolor}
+\usepackage[left=1cm,right=1cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{adjustbox}
+\usepackage{multirow}
+\usepackage{fancyhdr}
+
+\def\header{
+	\begin{center}
+		\begin{tabular}{p{2.5cm} p{18.1cm} p{3cm}}
+			\multirow{2}{*}{
+				\includegraphics[height=3cm]{clifford.jpg}	
+			}
+			& 
+			\vspace{5mm}
+			\textcolor{blue}{ \Large{ICCA10 Schedule \hfill Tartu, 4–9 August 2014} }
+			\textcolor{blue}{ \rule[1mm]{18.1cm}{0.7pt} } 
+			& 
+			\multirow{2}{*}{
+				\includegraphics[height=3cm]{ut_logo.png}
+			} 
+			
+			\\
+			
+			&
+			\vspace{-9mm}
+			\color{blue}{
+				$10^{\text{th}}$ International Conference on Clifford 
+				Algebras and their Applications in Mathematical Physics
+			}
+			& 
+		\end{tabular}
+	\end{center}
+}
+
+\def\rowend{
+	\\ \rule[1ex]{0pt}{1ex}
+}
+
+\newcommand{\pres}[2] {
+	\begin{tabular}{p{3cm}}
+		#1 \\  \textit{#2} \\ 
+	\end{tabular} 
+}
+\newcommand{\widepres}[2]{
+	\multicolumn{4}{l}{\pres{#1}{#2}}
+}
+\newcommand{\midpres}[2]{
+	\multicolumn{3}{l}{\pres{#1}{#2}}
+}
+\newcommand{\smallpres}[2]{
+	\multicolumn{2}{l}{\pres{#1}{#2}}
+}
+\newcommand{\lecroom}[3]{
+	\begin{tabular}{p{3cm}}
+		Lecrute room #1 \\ \textbf{#2} \\ Chair: #3 
+	\end{tabular} 	
+}
+\newcommand{\chair}[2]{
+	\begin{tabular}{p{3cm}}
+		\textbf{#1} \\ Chair: #2
+	\end{tabular} 	
+}
+
+\definecolor{blue}{HTML}{115599}
+
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\chead{\header}
+\cfoot{}
+
+\begin{document}
+\vspace*{1.6cm}
+\tiny
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% First page tabular starts here %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{center}
+	\begin{tabular}{l l}
+
+		% esmaspäev
+		\begin{tabular}{p{1.9cm} p{3cm} p{3cm}}
+			\multicolumn{3}{c}{\vspace{3mm} MONDAY, AUGUST 4, 2014} \rowend
+			 & \multicolumn{2}{l}{Lecrure room 111} \rowend
+			10:00 - 10:15 & \smallpres{David Eelbode}{This and that} \rowend
+			Coffee break & \multicolumn{2}{c}{} \rowend
+			11:15 - 11:45 & \smallpres{Eckhard Hitzer}{Lorem ipsum} \rowend
+			Lunch break & \multicolumn{2}{c}{} \rowend
+			 & \lecroom{403}{Section name}{Hitzer} & \lecroom{404}{Section name}{Anglès} \rowend
+			12:45 - 15:00 & \pres{H1}{H1 title} & \pres{PA1}{PA1 title} \rowend
+			15:00 - 15:30 & \pres{H2}{H2 title} & \pres{PA2}{PA2 title} \rowend
+			15:30 - 16:00 & \pres{H3}{H3 title} & \pres{PA3}{PA3 title} \rowend
+			16:00 - 16:30 & \pres{H4}{H4 title} & \pres{PA4}{PA4 title} \rowend
+			Coffee break & \multicolumn{2}{c}{} \rowend
+			 & \chair{Mathematical analysis}{Someone} & \chair{General session}{Someone} \rowend
+			17:00 - 17:30 & \pres{MA1}{MA1 title} & \pres{Oziewicz}{Oziewicz title} \rowend
+			17:30 - 18:00 & \pres{MA1}{MA1 title} & \pres{Ntumba}{Ntumba title} \rowend
+			17:30 - 18:00 & \pres{MA1}{MA1 title} & \pres{Liu}{Liu title} \rowend
+			18:30 - 19:00 & \pres{MA1}{MA1 title} & \pres{Shirokov}{Shirokov title} \rowend
+		\end{tabular}
+
+		&
+
+		% teisipäev
+		\begin{tabular}{p{1.9cm} p{3cm} p{3cm} p{1.9cm} p{3cm}}
+			\multicolumn{5}{c}{\vspace{3mm} TUESDAY, AUGUST 5, 2014} \rowend
+			 & \multicolumn{4}{l}{Lecrure room 111} \rowend
+			9:00 - 10:00 & \widepres{Daniel Alpay}{Cunning Title} \rowend
+			10:00 - 11:00 & \widepres{Irene Sabadini}{This and that} \rowend
+			Coffee break & \multicolumn{4}{c}{} \rowend
+			11:30 - 12:30 & \widepres{Pierre Anglès}{Lorem ipsum} \rowend
+			Lunch break & \multicolumn{4}{c}{} \rowend
+			
+			 & \lecroom{403}{Mathematical analysis}{Someone} & \lecroom{404}{General session}{Someone} & \multicolumn{2}{c}{\lecroom{405}{Section name}{Bayro}} \rowend
+			14:00 - 14:30 & \pres{MA5}{MA5 title} & \pres{Dzhunushaliev}{Dzhunushaliev title} & 14:00 - 15:00 & \pres{B1}{B1 title} \rowend
+			14:30 - 15:00 & \pres{MA6}{MA6 title} & \pres{Lasenby}{Lasenby title} & 15:00 - 15:20 & \pres{B2}{B2 title} \rowend
+			15:00 - 15:30 & \pres{MA7}{MA7 title} & \pres{Dvoeglazov}{Dvoeglazov title} & 15:20 - 15:40 & \pres{B3}{B3 title} \rowend
+			15:30 - 16:00 & \pres{MA8}{MA8 title} & \pres{Brito}{Brito title} & 15:40 - 16:00 & \pres{B4}{B4 title} \rowend
+			Coffee break & \multicolumn{4}{c}{} \rowend
+			
+			16:30 - 17:00 & \pres{MA9}{MA9 title} & \pres{Rodrigues}{Rodrigues title} & 16:30 - 17:30 & \pres{B5}{B5 title} \rowend
+			17:00 - 17:30 & \pres{MA10}{MA10 title} & \pres{Tanisli}{Tanisli title} & 17:30 - 17:50 & \pres{B6}{B6 title} \rowend
+			17:30 - 18:00 & \pres{MA11}{MA11 title} & \pres{Cavalcanti}{Cavalcanti title} & 17:50 - 18:10 & \pres{B7}{B7 title} \rowend
+			18:00 - 18:30 & \pres{MA12}{MA12 title} & \pres{Ott Vilson}{Ott Vilson title} & 18:10 - 18:30 & \pres{B8}{B8 title} \rowend
+		\end{tabular}
+
+	\end{tabular}
+\end{center}
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Second page tabular starts here %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{center}
+	\begin{tabular}{l l}
+
+		\begin{tabular}{c}
+			% kolmapäev
+			\begin{tabular}{p{1.5cm} p{3cm} p{3cm} p{3cm}}
+				\multicolumn{4}{c}{\vspace{3mm} WEDNESDAY, AUGUST 6, 2014} \rowend
+				10:00 - 17:00 & \multicolumn{3}{p{9cm}}{
+					Excursion to the Lake Peipsi Region where we see this and that and again this and that... Excursion to the Lake Peipsi Region where we see this and that and again this and that...	
+				} \rowend
+				18:00 - 21:00 & \multicolumn{3}{p{9cm}}{
+					Dinner and Clifford prize ceremony in/at...
+				} \rowend
+			\end{tabular}
+
+			\\
+
+			% neljapäev
+			\begin{tabular}{p{1.9cm} p{3cm} p{3cm} p{3cm}}
+				\multicolumn{4}{c}{\vspace{3mm} THURSDAY, AUGUST 7, 2014} \rowend
+				 & \multicolumn{3}{l}{Lecrure room 111} \rowend
+				9:00 - 10:00 & \midpres{Carlos Castro Perelman }{Carlos Castro Perelman  Title} \rowend
+				10:00 - 11:00 & \midpres{Klaus Guerlebeck}{This and that} \rowend
+				Coffee break & \multicolumn{3}{c}{} \rowend
+				11:30 - 12:30 & \midpres{Uwe Kaehler}{Lorem ipsum} \rowend
+				Lunch break & \multicolumn{3}{c}{} \rowend
+				
+				 & \lecroom{403}{Mathematical analysis}{Someone} & \lecroom{404}{McClellan session}{McClellan} & \lecroom{405}{Gunn Section}{Gunn} \rowend
+				14:00 - 14:30 & \pres{MA13}{MA13 title} & \pres{MC1}{MC1 title} & \pres{G1}{G1 title} \rowend
+				14:30 - 15:00 & \pres{MA14}{MA14 title} & \pres{MC2}{MC2 title} & \pres{G2}{G2 title} \rowend
+				15:00 - 15:30 & \pres{MA15}{MA15 title} & \pres{MC3}{MC3 title} & \pres{G3}{G3 title} \rowend
+				15:30 - 16:00 & \pres{MA16}{MA16 title} & \pres{MC4}{MC4 title} & \pres{G4}{G4 title} \rowend
+				Coffee break & \multicolumn{3}{c}{} \rowend
+				
+				16:30 - 17:00 & \pres{MA17}{MA17 title} & \pres{MC5}{MC5 title} & \pres{G5}{G5 title} \rowend
+				17:00 - 17:30 & \pres{MA18}{MA18 title} & \pres{MC6}{MC6 title} & \pres{G6}{G6 title} \rowend
+				17:30 - 18:00 & \pres{MA19}{MA19 title} & \pres{MC7}{MC7 title} & \rowend
+				18:00 - 18:30 & \pres{MA20}{MA20 title} & \pres{MC8}{MC8 title} & \rowend
+			\end{tabular}
+
+		\end{tabular}
+
+		&
+
+		\begin{tabular}{c}
+			% reede
+			\begin{tabular}{p{1.9cm} p{3cm} p{3cm} p{3cm}}
+				\multicolumn{4}{c}{\vspace{3mm} FRIDAY, AUGUST 8, 2014} \rowend
+				 & \multicolumn{3}{l}{Lecrure room 111} \rowend
+				9:00 - 10:00 & \midpres{Charles Gunn}{Charles Gunn Title} \rowend
+				10:00 - 11:00 & \midpres{G Stacey Staples}{This and that} \rowend
+				Coffee break & \multicolumn{3}{c}{} \rowend
+				11:30 - 12:30 & \midpres{Jose G. Vargas}{Lorem ipsum} \rowend
+				Lunch break & \multicolumn{3}{c}{} \rowend
+				
+				 & \lecroom{403}{Mathematical analysis}{Someone} & \lecroom{404}{McClellan session}{McClellan} & \lecroom{405}{Gunn Section}{Gunn} \rowend
+				14:00 - 14:30 & \pres{de Carvalho}{de Carvalho title} & \pres{MC9}{MC9 title} & \pres{Dechant}{Dechant title} \rowend
+				14:30 - 15:00 & \pres{Suzuki}{Suzuki title} & \pres{MC10}{MC10 title} & \pres{Krasauskas}{Krasauskas title} \rowend
+				15:00 - 15:30 & \pres{Abramov}{Abramov title} & \pres{MC11}{MC11 title} & \pres{Snygg}{Snygg title} \rowend
+				15:30 - 16:00 & \pres{Rokon}{Rokon title} & \pres{MC discussion}{MC discussion} & \pres{Hrdina}{Hrdina title} \rowend
+				Coffee break & \multicolumn{3}{c}{} \rowend
+				
+				16:30 - 17:00 & \pres{Gunn's tutorial}{Gunn's tutorial} & & \rowend
+			\end{tabular}
+
+			\\
+
+			% laupäev
+			\begin{tabular}{p{1.9cm} p{3cm} p{3cm} p{3cm}}
+				\multicolumn{4}{c}{\vspace{3mm} SATURDAY, AUGUST 9, 2014} \rowend
+				 & \multicolumn{3}{l}{Lecrure room 111} \rowend
+				9:00 - 10:00 & \multicolumn{3}{p{9cm}}{
+					\pres{Igor Kanatchikov}{Igor Kanatchikov Title}
+				} \rowend
+				10:00 - 11:00 & \multicolumn{3}{p{9cm}}{
+					\pres{Oliver Conradt}{Oliver Conradt title}
+				} \rowend
+				Coffee break & \multicolumn{3}{c}{} \rowend
+				11:30 - 12:30 & \multicolumn{3}{p{9cm}}{ 
+					\pres{Panel discussion}{}
+				} \rowend
+				12:30 - 13:00 & \multicolumn{3}{p{9cm}}{
+					\pres{Closing}{}
+				} \rowend
+			\end{tabular}
+
+		\end{tabular}
+
+	\end{tabular}
+\end{center}
+
+\end{document}
