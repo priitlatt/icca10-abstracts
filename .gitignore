@@ -143,5 +143,7 @@ docs/_build/
 # PyBuilder
 target/
 
+# Our stuff
 
 output
+dbconf.py
