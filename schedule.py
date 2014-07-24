@@ -96,11 +96,11 @@ def write_tex(tex):
 
 
 def compile_tex():
+    output_dir = os.path.dirname(TEX_OUTPUT)
     proc = subprocess.Popen(
-        ['pdflatex', TEX_OUTPUT],
+        ['pdflatex', '-output-director=%s' % output_dir, TEX_OUTPUT],
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
-        cwd=os.path.dirname(TEX_OUTPUT)
     )
     stdout, stderr = proc.communicate()
     print stderr or stdout
