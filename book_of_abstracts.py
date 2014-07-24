@@ -87,7 +87,7 @@ def generate_tex(participants):
 
 
 def save_abstracts(abstracts):
-    with open('_abstracts_.tex', 'w') as f:
+    with open('_abstracts_', 'w') as f:
         f.writelines(abstracts)
 
 
