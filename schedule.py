@@ -1,51 +1,25 @@
-import MySQLdb
 import os
 import shutil
 import subprocess
 
-import dbconf
 
-
-CSV_SEPARATOR = ","
-CSV_FILE = 'schedule.csv'
+CSV_SEPARATOR = "\t"
+CSV_FILE = 'schedule.tsv'
 TEX_SCHEDULE = 'schedule.tex'
 TEX_OUTPUT = os.path.join('output', TEX_SCHEDULE)
-
-db = MySQLdb.connect(
-    host=dbconf.host,
-    user=dbconf.username,
-    passwd=dbconf.password,
-    db=dbconf.db
-)
-
-cursor = db.cursor()
-query_string = "SELECT contribution_title FROM `participant` "\
-               "WHERE `first_name` LIKE '%s' "\
-               "AND `last_name` LIKE '%s'"
-
-
-class NotFoundException(Exception):
-    pass
 
 
 class Presentation(object):
 
-    def __init__(self, presentation_time, first_name, last_name):
+    def __init__(self, presentation_time, first_name, last_name, title):
         self.presentation_time = presentation_time
         self.first_name = first_name
         self.last_name = last_name
-        self.title = ''
-        self._name = None
+        self.title = title
 
     @property
     def name(self):
-        if self._name is None:
-            self._name = "%s %s" % (self.first_name, self.last_name)
-            return self._name
-        return self._name
-
-    def set_title(self, title):
-        self.title = title
+        return "%s %s" % (self.first_name, self.last_name)
 
     def _replace_name(self, tex):
         return tex.replace(self.presentation_time, self.name)
@@ -62,21 +36,29 @@ class Presentation(object):
         return "%s - %s - %s" % (self.presentation_time, self.name, self.title)
 
 
+def unpack_line(line):
+    splitted = line.strip().split(CSV_SEPARATOR)
+    time, first, last, title = '', '', '', ''
+    try:
+        time = splitted[0]
+        first = splitted[1]
+        last = splitted[2]
+        title = splitted[3]
+    except IndexError:
+        pass
+    return (time, first, last, title)
+
+
 def init_data():
     participants = []
     with open(CSV_FILE) as f:
         for line in f:
-            time, first, last = line.strip().split(CSV_SEPARATOR)
-            if not all([time, first, last]):
+            if not line.strip("%s\n\t " % CSV_SEPARATOR):
                 continue
-            participants.append(Presentation(time, first, last))
-    for p in participants:
-        cursor.execute(query_string % (p.first_name, p.last_name))
-        row = cursor.fetchone()
-        if row is None:
-            msg = "Didn't find match for '%s %s'" % (p.first_name, p.last_name)
-            raise NotFoundException(msg)
-        p.set_title(row[0])
+            data = unpack_line(line)
+            if not all(data):
+                print "Warnig, something is missing: %s" % str(data)
+            participants.append(Presentation(*data))
     return participants
 
 
@@ -97,22 +79,18 @@ def write_tex(tex):
 
 def compile_tex():
     output_dir = os.path.dirname(TEX_OUTPUT)
+    cmd = ['pdflatex', '-output-director=%s' % output_dir, TEX_OUTPUT]
+    print "executing '%s'" % ' '.join(cmd)
     proc = subprocess.Popen(
-        ['pdflatex', '-output-director=%s' % output_dir, TEX_OUTPUT],
-        stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE,
-    )
+        cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     stdout, stderr = proc.communicate()
     print stderr or stdout
 
 
 def main():
-    try:
-        participants = init_data()
-        for p in participants:
-            print p
-    except NotFoundException as e:
-        print "ERROR OCCURED: %s" % e.message
+    participants = init_data()
+    for p in participants:
+        print p
 
     tex = read_tex()
     for p in participants:

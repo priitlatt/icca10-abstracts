@@ -16,15 +16,14 @@
   \begin{center}
     \begin{tabular}{p{2.5cm} p{18.1cm} p{3cm}}
       \multirow{2}{*}{
-        \includegraphics[height=3cm]{clifford.jpg}  
+        \includegraphics[height=2.5cm]{clifford.jpg}  
       }
       & 
-      \vspace{5mm}
       \textcolor{blue}{ \Large{ICCA10 Schedule \hfill Tartu, 4–9 August 2014} }
       \textcolor{blue}{ \rule[1mm]{18.1cm}{0.7pt} } 
       & 
       \multirow{2}{*}{
-        \includegraphics[height=3cm]{ut_logo.png}
+        \includegraphics[height=2.5cm]{ut_logo.png}
       } 
       
       \\
@@ -40,6 +39,7 @@
   \end{center}
 }
 
+
 \definecolor{blue}{HTML}{115599}
 \definecolor{foodcol}{HTML}{BF9000}
 \definecolor{plencol}{HTML}{5B0F00}
@@ -50,46 +50,60 @@
 \definecolor{bcol}{HTML}{4C1130}
 \definecolor{mccol}{HTML}{660000}
 \definecolor{gcol}{HTML}{0C343D}
+\definecolor{black}{HTML}{000000}
 
 
 \def\rowend{ \\ \rule[1ex]{0pt}{1ex} }
 
-\newcommand{\food}[1]{ \textcolor{foodcol}{#1} }
-\newcommand{\plen}[1]{ \color{plencol}{#1} }
-\newcommand{\myDay}[2]{ \vspace{3mm} \textbf{#1, AUGUST #2, 2014} }
-
-\newcommand{\pres}[2] {
-  \begin{tabular}{p{3cm}}
-    #1 \\  \textit{#2} \\ 
-  \end{tabular} 
+\newcommand{\food}[1]{
+  \textcolor{foodcol}{#1}
+  \vspace*{1mm}
 }
-\newcommand{\cpres}[3] {
-  \begin{tabular}{p{3cm}}
+\newcommand{\plen}[1]{ \color{plencol}{#1} }
+\newcommand{\myDay}[2]{ \vspace{2mm} \textbf{#1, AUGUST #2, 2014} }
+
+\newcommand{\apres}[3] {
+  \begin{tabular}{p{3.8cm}}
     \textcolor{#1}{#2} \\  \textit{\textcolor{#1}{#3}} \\ 
-  \end{tabular} 
+  \end{tabular}
+  \vspace*{1mm}
+}
+\newcommand{\bpres}[3] {
+  \begin{tabular}{p{3.4cm}}
+    \textcolor{#1}{#2} \\  \textit{\textcolor{#1}{#3}} \\ 
+  \end{tabular}
+  \vspace*{1mm}
+}
+\newcommand{\plenpres}[2] {
+  \begin{tabular}{l}
+    \textcolor{plencol}{#1} \\ \textit{\textcolor{plencol}{#2}} \\ 
+  \end{tabular}
+  \vspace*{1mm}
 }
 \newcommand{\widepres}[2]{
-  \multicolumn{4}{l}{\cpres{plencol}{#1}{#2}}
+  \multicolumn{4}{l}{\plenpres{#1}{#2}}
 }
 \newcommand{\midpres}[2]{
-  \multicolumn{3}{l}{\cpres{plencol}{#1}{#2}}
+  \multicolumn{3}{l}{\plenpres{#1}{#2}}
 }
 \newcommand{\smallpres}[2]{
-  \multicolumn{2}{l}{\cpres{plencol}{#1}{#2}}
+  \multicolumn{2}{l}{\plenpres{#1}{#2}}
 }
 \newcommand{\tinypres}[2]{
-  \multicolumn{1}{l}{\cpres{plencol}{#1}{#2}}
+  \multicolumn{1}{l}{\plenpres{#1}{#2}}
 }
 
 \newcommand{\lecroom}[3]{
   \begin{tabular}{p{3cm}}
-    Lecrute room #1 \\ \textbf{#2} \\ Chair: #3 
-  \end{tabular}   
+    Lecture room #1 \\ \textbf{#2} \\ Chair: #3 
+  \end{tabular}
+  \vspace*{1mm}
 }
 \newcommand{\chair}[2]{
   \begin{tabular}{p{3cm}}
     \textbf{#1} \\ Chair: #2
-  \end{tabular}   
+  \end{tabular}
+  \vspace*{1mm}
 }
 
 \pagestyle{fancy}
@@ -98,7 +112,7 @@
 \cfoot{}
 
 \begin{document}
-\vspace*{1.6cm}
+\vspace*{1cm}
 \tiny
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -109,54 +123,55 @@
   \begin{tabular}{ l l }
 
     % esmaspäev
-    \begin{tabular}{ p{1.9cm} p{3cm} p{3cm} }
+    \begin{tabular}{ p{0.7cm} p{4cm} p{4cm} }
       \multicolumn{3}{c}{\myDay{MONDAY}{4}} \rowend
        & \multicolumn{2}{l}{ \hspace{1mm} Lecrure room 111} \rowend
-      09:00 - 10:00 & \hspace{1mm} Registration \rowend
-      10:15 - 11:15 & \hspace{1mm} Opening ceremony \rowend
-      10:15 - 11:15 & \smallpres{MON-PLEN-1}{MON-PLEN-1-TITLE} \rowend
-      \food{Coffee break} & \multicolumn{2}{c}{} \rowend
-      11:45 - 12:45 & \smallpres{MON-PLEN-2}{MON-PLEN-2-TITLE} \rowend
-      \food{Lunch break} & \multicolumn{2}{c}{} \rowend
+      09:00 & \hspace{1mm} Registration \rowend
+      10:00 & \hspace{1mm} Opening ceremony \rowend
+      10:15 & \smallpres{MON-PLEN-1}{MON-PLEN-1-TITLE} \rowend
+      12:15 & \multicolumn{2}{l}{\food{Coffee break}} \rowend
+      11:45 & \smallpres{MON-PLEN-2}{MON-PLEN-2-TITLE} \rowend
+      12:45 & \multicolumn{2}{l}{\food{Lunch break}} \rowend
       & \lecroom{403}{MON-403-SEC-1}{MON-403-SEC-1-CHAIR} & \lecroom{404}{MON-404-SEC-1}{MON-404-SEC-1-CHAIR} \rowend
-      15:00 - 15:30 & \cpres{hizcol}{MON-403-1}{MON-403-1-TITLE} & \cpres{pacol}{MON-404-1}{MON-404-1-TITLE} \rowend
-      15:30 - 16:00 & \cpres{hizcol}{MON-403-2}{MON-403-2-TITLE} & \cpres{pacol}{MON-404-2}{MON-404-2-TITLE} \rowend
-      16:00 - 16:30 & \cpres{hizcol}{MON-403-3}{MON-403-3-TITLE} & \cpres{pacol}{MON-404-3}{MON-404-3-TITLE} \rowend
-      \food{Coffee break} & \multicolumn{2}{c}{} \rowend
+      15:00 & \apres{hizcol}{MON-403-1}{MON-403-1-TITLE} & \apres{pacol}{MON-404-1}{MON-404-1-TITLE} \rowend
+      15:30 & \apres{hizcol}{MON-403-2}{MON-403-2-TITLE} & \apres{pacol}{MON-404-2}{MON-404-2-TITLE} \rowend
+      16:00 & \apres{hizcol}{MON-403-3}{MON-403-3-TITLE} & \apres{pacol}{MON-404-3}{MON-404-3-TITLE} \rowend
+      16:30 & \multicolumn{2}{l}{\food{Coffee break}} \rowend
        & \chair{MON-403-SEC-2}{MON-403-SEC-2-CHAIR} & \chair{MON-404-SEC-2}{MON-404-SEC-2-CHAIR} \rowend
-      17:00 - 17:30 & \cpres{macol}{MON-403-4}{MON-403-4-TITLE} & \cpres{gencol}{MON-404-4}{MON-404-4-TITLE} \rowend
-      17:30 - 18:00 & \cpres{macol}{MON-403-5}{MON-403-5-TITLE} & \cpres{gencol}{MON-404-5}{MON-404-5-TITLE} \rowend
-      17:30 - 18:00 & \cpres{macol}{MON-403-6}{MON-403-6-TITLE} & \cpres{gencol}{MON-404-6}{MON-404-6-TITLE} \rowend
-      18:30 - 19:00 & \cpres{macol}{MON-403-7}{MON-403-7-TITLE} & \cpres{gencol}{MON-404-7}{MON-404-7-TITLE} \rowend
+      17:00 & \apres{macol}{MON-403-4}{MON-403-4-TITLE} & \apres{gencol}{MON-404-4}{MON-404-4-TITLE} \rowend
+      17:30 & \apres{macol}{MON-403-5}{MON-403-5-TITLE} & \apres{gencol}{MON-404-5}{MON-404-5-TITLE} \rowend
+      17:30 & \apres{macol}{MON-403-6}{MON-403-6-TITLE} & \apres{gencol}{MON-404-6}{MON-404-6-TITLE} \rowend
+      18:30 & \apres{macol}{MON-403-7}{MON-403-7-TITLE} & \apres{gencol}{MON-404-7}{MON-404-7-TITLE} \rowend
     \end{tabular}
 
     &
 
     % teisipäev
-    \begin{tabular}{ p{1.9cm} p{3cm} p{3cm} p{1.9cm} p{3cm} }
+    \begin{tabular}{ p{0.7cm} p{4cm} p{4cm} p{0.7cm} p{4cm} }
       \multicolumn{5}{c}{\myDay{TUESDAY}{5}} \rowend
        & \multicolumn{4}{l}{ \hspace{1mm} Lecrure room 111} \rowend
-      09:00 - 10:00 & \widepres{TUE-PLEN-1}{TUE-PLEN-1-TITLE} \rowend
-      10:00 - 11:00 & \widepres{TUE-PLEN-2}{TUE-PLEN-2-TITLE} \rowend
-      \food{Coffee break} & \multicolumn{4}{c}{} \rowend
-      11:30 - 12:30 & \widepres{TUE-PLEN-3}{TUE-PLEN-3-TITLE} \rowend
-      \food{Lunch break} & \multicolumn{4}{c}{} \rowend
+      09:00 & \widepres{TUE-PLEN-1}{TUE-PLEN-1-TITLE} \rowend
+      10:00 & \widepres{TUE-PLEN-2}{TUE-PLEN-2-TITLE} \rowend
+      11:00 & \multicolumn{4}{l}{\food{Coffee break}} \rowend
+      11:30 & \widepres{TUE-PLEN-3}{TUE-PLEN-3-TITLE} \rowend
+      12:30 & \multicolumn{4}{l}{\food{Lunch break}} \rowend
        & \lecroom{403}{TUE-403-SEC-1}{TUE-403-SEC-1-CHAIR} & \lecroom{404}{TUE-404-SEC-1}{TUE-404-SEC-1-CHAIR} & \multicolumn{2}{c}{\lecroom{405}{TUE-405-SEC-1}{TUE-405-SEC-1-CHAIR}} \rowend
-      14:00 - 14:30 & \cpres{macol}{TUE-403-1}{TUE-403-1-TITLE} & \cpres{gencol}{TUE-404-1}{TUE-404-1-TITLE} & 14:00 - 15:00 & \cpres{bcol}{TUE-405-1}{TUE-405-1-TITLE} \rowend
-      14:30 - 15:00 & \cpres{macol}{TUE-403-2}{TUE-403-2-TITLE} & \cpres{gencol}{TUE-404-2}{TUE-404-2-TITLE} & 15:00 - 15:20 & \cpres{bcol}{TUE-405-2}{TUE-405-2-TITLE} \rowend
-      15:00 - 15:30 & \cpres{macol}{TUE-403-3}{TUE-403-3-TITLE} & \cpres{gencol}{TUE-404-3}{TUE-404-3-TITLE} & 15:20 - 15:40 & \cpres{bcol}{TUE-405-3}{TUE-405-3-TITLE} \rowend
-      15:30 - 16:00 & \cpres{macol}{TUE-403-4}{TUE-403-4-TITLE} & \cpres{gencol}{TUE-404-4}{TUE-404-4-TITLE} & 15:40 - 16:00 & \cpres{bcol}{TUE-405-4}{TUE-405-4-TITLE} \rowend
-      \food{Coffee break} & \multicolumn{4}{c}{} \rowend
-      16:30 - 17:00 & \cpres{macol}{TUE-403-5}{TUE-403-5-TITLE} & \cpres{gencol}{TUE-404-5}{TUE-404-5-TITLE} & 16:30 - 17:30 & \cpres{bcol}{TUE-405-5}{TUE-405-5-TITLE} \rowend
-      17:00 - 17:30 & \cpres{macol}{TUE-403-6}{TUE-403-6-TITLE} & \cpres{gencol}{TUE-404-6}{TUE-404-6-TITLE} & 17:30 - 17:50 & \cpres{bcol}{TUE-405-6}{TUE-405-6-TITLE} \rowend
-      17:30 - 18:00 & \cpres{macol}{TUE-403-7}{TUE-403-7-TITLE} & \cpres{gencol}{TUE-404-7}{TUE-404-7-TITLE} & 17:50 - 18:10 & \cpres{bcol}{TUE-405-7}{TUE-405-7-TITLE} \rowend
-      18:00 - 18:30 & \cpres{macol}{TUE-403-8}{TUE-403-8-TITLE} & \cpres{gencol}{TUE-404-8}{TUE-404-8-TITLE} & 18:10 - 18:30 & \cpres{bcol}{TUE-405-8}{TUE-405-8-TITLE} \rowend
+      14:00 & \apres{macol}{TUE-403-1}{TUE-403-1-TITLE} & \apres{gencol}{TUE-404-1}{TUE-404-1-TITLE} & 14:00 & \apres{bcol}{TUE-405-1}{TUE-405-1-TITLE} \rowend
+      14:30 & \apres{macol}{TUE-403-2}{TUE-403-2-TITLE} & \apres{gencol}{TUE-404-2}{TUE-404-2-TITLE} & 15:00 & \apres{bcol}{TUE-405-2}{TUE-405-2-TITLE} \rowend
+      15:00 & \apres{macol}{TUE-403-3}{TUE-403-3-TITLE} & \apres{gencol}{TUE-404-3}{TUE-404-3-TITLE} & 15:20 & \apres{bcol}{TUE-405-3}{TUE-405-3-TITLE} \rowend
+      15:30 & \apres{macol}{TUE-403-4}{TUE-403-4-TITLE} & \apres{gencol}{TUE-404-4}{TUE-404-4-TITLE} & 15:40 & \apres{bcol}{TUE-405-4}{TUE-405-4-TITLE} \rowend
+      16:00 & \multicolumn{4}{l}{\food{Coffee break}} \rowend
+      16:30 & \apres{macol}{TUE-403-5}{TUE-403-5-TITLE} & \apres{gencol}{TUE-404-5}{TUE-404-5-TITLE} & 16:30 & \apres{bcol}{TUE-405-5}{TUE-405-5-TITLE} \rowend
+      17:00 & \apres{macol}{TUE-403-6}{TUE-403-6-TITLE} & \apres{gencol}{TUE-404-6}{TUE-404-6-TITLE} & 17:30 & \apres{bcol}{TUE-405-6}{TUE-405-6-TITLE} \rowend
+      17:30 & \apres{macol}{TUE-403-7}{TUE-403-7-TITLE} & \apres{gencol}{TUE-404-7}{TUE-404-7-TITLE} & 17:50 & \apres{bcol}{TUE-405-7}{TUE-405-7-TITLE} \rowend
+      18:00 & \apres{macol}{TUE-403-8}{TUE-403-8-TITLE} & \apres{gencol}{TUE-404-8}{TUE-404-8-TITLE} & 18:10 & \apres{bcol}{TUE-405-8}{TUE-405-8-TITLE} \rowend
     \end{tabular}
 
   \end{tabular}
 \end{center}
 
 \newpage
+\vspace*{-2cm}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Second page tabular starts here %%
@@ -167,33 +182,33 @@
 
     \begin{tabular}{ c }
       % kolmapäev
-      \begin{tabular}{ p{2.1cm} p{9.6cm} }
+      \begin{tabular}{ p{0.9cm} p{11.5cm} }
         \multicolumn{2}{c}{\myDay{WEDNESDAY}{6}} \rowend
-        10:00 - 17:00 & EXCURSION-INFO \rowend
-        18:00 - 21:00 & DINNER-INFO \rowend
+        10:00 & EXCURSION-INFO \rowend
+        19:00 & DINNER-INFO \rowend
       \end{tabular}
 
       \\
 
       % neljapäev
-      \begin{tabular}{ p{1.9cm} p{3cm} p{3cm} p{3cm} }
+      \begin{tabular}{ p{0.7cm} p{3.6cm} p{3.6cm} p{3.6cm} }
         \multicolumn{4}{c}{\myDay{THURSDAY}{7}} \rowend
          & \multicolumn{3}{l}{ \hspace{1mm} Lecrure room 111} \rowend
-        09:00 - 10:00 & \midpres{THU-PLEN-1}{THU-PLEN-1-TITLE} \rowend
-        10:00 - 11:00 & \midpres{THU-PLEN-1}{THU-PLEN-1-TITLE} \rowend
-        \food{Coffee break} & \multicolumn{3}{c}{} \rowend
-        11:30 - 12:30 & \midpres{THU-PLEN-1}{THU-PLEN-1-TITLE} \rowend
-        \food{Lunch break} & \multicolumn{3}{c}{} \rowend
+        09:00 & \midpres{THU-PLEN-1}{THU-PLEN-1-TITLE} \rowend
+        10:00 & \midpres{THU-PLEN-2}{THU-PLEN-2-TITLE} \rowend
+        11:00 & \multicolumn{3}{l}{\food{Coffee break}} \rowend
+        11:30 & \midpres{THU-PLEN-3}{THU-PLEN-3-TITLE} \rowend
+        12:30 & \multicolumn{3}{l}{\food{Lunch break}} \rowend
          & \lecroom{403}{THU-403-SEC-1}{THU-403-SEC-1-CHAIR} & \lecroom{404}{THU-404-SEC-1}{THU-404-SEC-1-CHAIR} & \lecroom{405}{THU-405-SEC-1}{THU-405-SEC-1-CHAIR} \rowend
-        14:00 - 14:30 & \cpres{macol}{THU-403-1}{THU-403-1-TITLE} & \cpres{mccol}{THU-404-1}{THU-404-1-TITLE} & \cpres{gcol}{THU-405-1}{THU-405-1-TITLE} \rowend
-        14:30 - 15:00 & \cpres{macol}{THU-403-2}{THU-403-2-TITLE} & \cpres{mccol}{THU-404-2}{THU-404-2-TITLE} & \cpres{gcol}{THU-405-2}{THU-405-2-TITLE} \rowend
-        15:00 - 15:30 & \cpres{macol}{THU-403-3}{THU-403-3-TITLE} & \cpres{mccol}{THU-404-3}{THU-404-3-TITLE} & \cpres{gcol}{THU-405-3}{THU-405-3-TITLE} \rowend
-        15:30 - 16:00 & \cpres{macol}{THU-403-4}{THU-403-4-TITLE} & \cpres{mccol}{THU-404-4}{THU-404-4-TITLE} & \cpres{gcol}{THU-405-4}{THU-405-4-TITLE} \rowend
-        \food{Coffee break} & \multicolumn{3}{c}{} \rowend
-        16:30 - 17:00 & \cpres{macol}{THU-403-5}{THU-403-5-TITLE} & \cpres{mccol}{THU-404-5}{THU-404-5-TITLE} & \cpres{gcol}{THU-405-5}{THU-405-5-TITLE} \rowend
-        17:00 - 17:30 & \cpres{macol}{THU-403-6}{THU-403-6-TITLE} & \cpres{mccol}{THU-404-6}{THU-404-6-TITLE} & \cpres{gcol}{THU-405-6}{THU-405-6-TITLE} \rowend
-        17:30 - 18:00 & \cpres{macol}{THU-403-7}{THU-403-7-TITLE} & \cpres{mccol}{THU-404-7}{THU-404-7-TITLE} & \rowend
-        18:00 - 18:30 & \cpres{macol}{THU-403-8}{THU-403-8-TITLE} & \cpres{mccol}{THU-404-8}{THU-404-8-TITLE} & \rowend
+        14:00 & \bpres{macol}{THU-403-1}{THU-403-1-TITLE} & \bpres{mccol}{THU-404-1}{THU-404-1-TITLE} & \bpres{gcol}{THU-405-1}{THU-405-1-TITLE} \rowend
+        14:30 & \bpres{macol}{THU-403-2}{THU-403-2-TITLE} & \bpres{mccol}{THU-404-2}{THU-404-2-TITLE} & \bpres{gcol}{THU-405-2}{THU-405-2-TITLE} \rowend
+        15:00 & \bpres{macol}{THU-403-3}{THU-403-3-TITLE} & \bpres{mccol}{THU-404-3}{THU-404-3-TITLE} & \bpres{gcol}{THU-405-3}{THU-405-3-TITLE} \rowend
+        15:30 & \bpres{macol}{THU-403-4}{THU-403-4-TITLE} & \bpres{mccol}{THU-404-4}{THU-404-4-TITLE} & \bpres{gcol}{THU-405-4}{THU-405-4-TITLE} \rowend
+        16:00 & \multicolumn{3}{l}{\food{Coffee break}} \rowend
+        16:30 & \bpres{macol}{THU-403-5}{THU-403-5-TITLE} & \bpres{mccol}{THU-404-5}{THU-404-5-TITLE} & \bpres{gcol}{THU-405-5}{THU-405-5-TITLE} \rowend
+        17:00 & \bpres{macol}{THU-403-6}{THU-403-6-TITLE} & \bpres{mccol}{THU-404-6}{THU-404-6-TITLE} & \bpres{gcol}{THU-405-6}{THU-405-6-TITLE} \rowend
+        17:30 & \bpres{macol}{THU-403-7}{THU-403-7-TITLE} & \bpres{mccol}{THU-404-7}{THU-404-7-TITLE} & \rowend
+        18:00 & \bpres{macol}{THU-403-8}{THU-403-8-TITLE} & \bpres{mccol}{THU-404-8}{THU-404-8-TITLE} & \rowend
       \end{tabular}
 
     \end{tabular}
@@ -202,34 +217,34 @@
 
     \begin{tabular}{ c }
       % reede
-      \begin{tabular}{ p{1.9cm} p{3cm} p{3cm} p{3cm} }
+      \begin{tabular}{ p{0.7cm} p{3.6cm} p{3.6cm} p{3.6cm} }
         \multicolumn{4}{c}{\myDay{FRIDAY}{8}} \rowend
          & \multicolumn{3}{l}{ \hspace{1mm} Lecrure room 111} \rowend
-        09:00 - 10:00 & \midpres{FRI-PLEN-1}{FRI-PLEN-1-TITLE} \rowend
-        10:00 - 11:00 & \midpres{FRI-PLEN-2}{FRI-PLEN-2-TITLE} \rowend
-        \food{Coffee break} & \multicolumn{3}{c}{} \rowend
-        11:30 - 12:30 & \midpres{FRI-PLEN-3}{FRI-PLEN-3-TITLE} \rowend
-        \food{Lunch break} & \multicolumn{3}{c}{} \rowend
+        09:00 & \midpres{FRI-PLEN-1}{FRI-PLEN-1-TITLE} \rowend
+        10:00 & \midpres{FRI-PLEN-2}{FRI-PLEN-2-TITLE} \rowend
+        11:00 & \multicolumn{3}{l}{\food{Coffee break}} \rowend
+        11:30 & \midpres{FRI-PLEN-3}{FRI-PLEN-3-TITLE} \rowend
+        12:30 & \multicolumn{3}{l}{\food{Lunch break}} \rowend
          & \lecroom{403}{FRI-403-SEC-1}{FRI-403-SEC-1-CHAIR} & \lecroom{404}{FRI-403-SEC-1}{FRI-404-SEC-1-CHAIR} & \lecroom{405}{FRI-405-SEC-1}{FRI-405-SEC-1-CHAIR} \rowend
-        14:00 - 14:30 & \cpres{gencol}{FRI-403-1}{FRI-403-1-TITLE} & \cpres{mccol}{FRI-404-1}{FRI-404-1-TITLE} & \cpres{gencol}{FRI-405-1}{FRI-405-1-TITLE} \rowend
-        14:30 - 15:00 & \cpres{gencol}{FRI-403-2}{FRI-403-2-TITLE} & \cpres{mccol}{FRI-404-2}{FRI-404-2-TITLE} & \cpres{gencol}{FRI-405-2}{FRI-405-2-TITLE} \rowend
-        15:00 - 15:30 & \cpres{gencol}{FRI-403-3}{FRI-403-3-TITLE} & \cpres{mccol}{FRI-404-3}{FRI-404-3-TITLE} & \cpres{gencol}{FRI-405-3}{FRI-405-3-TITLE} \rowend
-        15:30 - 16:00 & \cpres{gencol}{FRI-403-4}{FRI-403-4-TITLE} & \cpres{mccol}{FRI-404-4}{FRI-404-4-TITLE} & \cpres{gencol}{FRI-405-4}{FRI-405-4-TITLE} \rowend
-        \food{Coffee break} & \multicolumn{3}{c}{} \rowend
-        16:30 - 18:30 & \pres{FRI-403-5}{FRI-403-5-TITLE} & & \rowend
+        14:00 & \bpres{gencol}{FRI-403-1}{FRI-403-1-TITLE} & \bpres{mccol}{FRI-404-1}{FRI-404-1-TITLE} & \bpres{gencol}{FRI-405-1}{FRI-405-1-TITLE} \rowend
+        14:30 & \bpres{gencol}{FRI-403-2}{FRI-403-2-TITLE} & \bpres{mccol}{FRI-404-2}{FRI-404-2-TITLE} & \bpres{gencol}{FRI-405-2}{FRI-405-2-TITLE} \rowend
+        15:00 & \bpres{gencol}{FRI-403-3}{FRI-403-3-TITLE} & \bpres{mccol}{FRI-404-3}{FRI-404-3-TITLE} & \bpres{gencol}{FRI-405-3}{FRI-405-3-TITLE} \rowend
+        15:30 & \bpres{gencol}{FRI-403-4}{FRI-403-4-TITLE} & \bpres{mccol}{FRI-404-4}{FRI-404-4-TITLE} & \bpres{gencol}{FRI-405-4}{FRI-405-4-TITLE} \rowend
+        16:00 & \multicolumn{3}{l}{\food{Coffee break}} \rowend
+        16:30 & \bpres{black}{FRI-403-5}{FRI-403-5-TITLE} & & \rowend
       \end{tabular}
 
       \\
       
       % laupäev
-      \begin{tabular}{ p{1.9cm} p{9.8cm} }
+      \begin{tabular}{ p{0.8cm} p{11.5cm} }
         \multicolumn{2}{c}{\myDay{SATURDAY}{9}} \rowend
          & \hspace{1mm} Lecrure room 111 \rowend
-        09:00 - 10:00 & \tinypres{SAT-PLEN-1}{SAT-PLEN-1-TITLE} \rowend
-        10:00 - 11:00 & \tinypres{SAT-PLEN-2}{SAT-PLEN-2-TITLE} \rowend
-        \food{Coffee break} & \rowend
-        11:30 - 12:30 & \hspace{1mm} Panel discussion \rowend
-        12:30 - 13:00 & \hspace{1mm} Closing \rowend
+        09:00 & \tinypres{SAT-PLEN-1}{SAT-PLEN-1-TITLE} \rowend
+        10:00 & \tinypres{SAT-PLEN-2}{SAT-PLEN-2-TITLE} \rowend
+        11:00 & \food{Coffee break} \rowend
+        11:30 & \hspace{1mm} Panel discussion \rowend
+        12:30 & \hspace{1mm} Closing \rowend
       \end{tabular}
 
     \end{tabular}
